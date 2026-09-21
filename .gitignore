@@ -216,3 +216,23 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# LangGraph CLI & Runtime Cache
+.langgraph/
+.langgraph_api/
+
+# OS metadata
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Sensitive Candidate / Company Data Protection
+# (실제 지원자 이력서/사내 기밀 문서 커밋 방지, sample_* 예제 파일은 허용)
+*.pdf
+*.docx
+*.xlsx
+*.csv
+!**/sample_*
