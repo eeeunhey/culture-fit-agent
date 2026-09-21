@@ -45,3 +45,4 @@ As an AI coding assistant working in this workspace, you MUST automatically foll
   - Always specify `open(..., encoding="utf-8")` in Python to prevent Windows `CP949` decoding errors.
 - **Package Management**:
   - Always use `uv` (`uv add`, `uv sync`, `uv run`). Do not advise bare `pip install`.
+
