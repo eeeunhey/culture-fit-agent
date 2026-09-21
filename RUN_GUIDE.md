@@ -38,22 +38,35 @@ culture-fit-agent/
 ### 1.1 저장소 복제 및 가상환경 동기화
 터미널(PowerShell 또는 Bash)에서 아래 명령어를 실행합니다.
 
-```powershell
+```bash
 # 1. 패키지 의존성 전체 설치 (가상환경 자동 생성 및 최신화)
 uv sync
 
-# 2. 가상환경 활성화 (Windows PowerShell 기준)
+# 2. 가상환경 활성화 (사용 중인 터미널에 맞춰 실행)
+
+# [Git Bash (MINGW64) 사용자]
+source .venv/Scripts/activate
+
+# [Windows PowerShell 사용자]
 .venv\Scripts\Activate.ps1
 
-# (참고: macOS/Linux 환경인 경우)
-# source .venv/bin/activate
+# [Windows 명령 프롬프트(CMD) 사용자]
+.venv\Scripts\activate.bat
+
+# [macOS / Linux 사용자]
+source .venv/bin/activate
 ```
+
+> 💡 **Tip**: `uv`를 사용할 경우 가상환경을 매번 수동으로 활성화하지 않아도, `uv run <명령어>`(예: `uv run langgraph dev`)를 실행하면 자동으로 가상환경 내에서 동작합니다.
 
 ### 1.2 환경 변수(.env) 설정
 루트 디렉터리의 `.env.sample`을 복사하여 `.env`를 생성하고 필요한 API 키를 입력합니다.
 
-```powershell
-# .env 파일 생성
+```bash
+# Git Bash 또는 macOS/Linux 환경
+cp .env.sample .env
+
+# Windows PowerShell 환경
 Copy-Item .env.sample .env
 ```
 `.env` 파일에 발급받은 OpenAI API 키 등을 입력합니다:
